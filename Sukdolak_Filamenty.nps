@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<knowledge_base version="1.0">
+	<head default_answers="5">
+		<name>
+			<content culture="cs-CZ" type="text">Vyber spravneho filamentu pro 3D tisk od firmy fillamentum </content>
+		</name>
+		<identifier>xsukdo00</identifier>   
+		<cultures>
+			<culture>cs-CZ</culture>
+		</cultures>
+		<description>
+			<content culture="cs-CZ" type="text">
+				Báze znalostí slouží k výberu správného filamentu pro 3D tisk
+				<br/>
+			</content>
+		</description>
+	</head>
+	<body>
+		<node literal="zkusen" probability="50.00" type="query">
+			<comment>
+				<content culture="cs-CZ" type="text">
+					Jaké máte zkušenosti s tiskem?
+					<br/>
+				</content>
+			</comment>
+			<answers>
+				<answer probability="95.00">
+					<content culture="cs-CZ" type="text">Velké (aspoň 3 roky) </content>
+				</answer>
+				<answer probability="75.00">
+					<content culture="cs-CZ" type="text">Celkem Velké (+1 rok) </content>
+				</answer>
+				<answer probability="50.00">
+					<content culture="cs-CZ" type="text">Nevím</content>
+				</answer>
+				<answer probability="40.00">
+					<content culture="cs-CZ" type="text">Male (-1 rok) </content>
+				</answer>
+				<answer probability="5.00">
+					<content culture="cs-CZ" type="text">Žádné </content>
+				</answer>
+			</answers>
+		</node>
+	
+			<node literal="vyhr" probability="70.00" type="query">
+			<comment>
+				<content culture="cs-CZ" type="text">
+					Jaké možnosti vyhřívaní má vaše tiskárna?
+					<br/>
+				</content>
+			</comment>
+			<answers>
+				<answer probability="90.00">
+					<content culture="cs-CZ" type="text">Vyhrívaná hlava, podložka a cele v boxu </content>
+				</answer>
+				<answer probability="75.00">
+					<content culture="cs-CZ" type="text">Vyhrívaná hlava a podložka  </content>
+				</answer>
+				<answer probability="60.00">
+					<content culture="cs-CZ" type="text">Vyhrívaná hlava a cele v Boxu </content>
+				</answer>
+				<answer probability="50.00">
+					<content culture="cs-CZ" type="text">Nevím</content>
+				</answer>
+				<answer probability="35.00">
+					<content culture="cs-CZ" type="text">Vyhrívaná hlava  </content>
+				</answer>
+
+			</answers>
+		</node>
+	
+
+		<node literal="rych" probability="50.00" type="query">
+			<comment>
+				<content culture="cs-CZ" type="text">
+					Jak rychle potřebujete tisknou?
+					<image>speed.jpg</image>
+					<br/>
+				</content>
+			</comment>
+			<answers>
+				<answer probability="90.00">
+					<content culture="cs-CZ" type="text">Co nejrychleji  </content>
+				</answer>
+				<answer probability="75.00">
+					<content culture="cs-CZ" type="text">Rychle </content>
+				</answer>
+				<answer probability="50.00">
+					<content culture="cs-CZ" type="text">Nevím</content>
+				</answer>
+				<answer probability="35.00">
+					<content culture="cs-CZ" type="text">Času mam dost  </content>
+				</answer>
+				<answer probability="15.00">
+					<content culture="cs-CZ" type="text">Co nejpomaleji </content>
+				</answer>
+			</answers>
+		
+		</node>
+	
+		<node literal="presnost" probability="50.00" type="query">
+			<comment>
+				<content culture="cs-CZ" type="text">
+					S jakou přesností budete model tisknout?
+					<image>layer.jpg</image>
+					<br/>
+				</content>
+			</comment>
+			<answers>
+				<answer probability="80.00">
+					<content culture="cs-CZ" type="text">0,4mm </content>
+				</answer>
+				<answer probability="70.00">
+					<content culture="cs-CZ" type="text">0,3mm </content>
+				</answer>
+				<answer probability="50.00">
+					<content culture="cs-CZ" type="text">Nevím</content>
+				</answer>
+				<answer probability="45.00">
+					<content culture="cs-CZ" type="text">0,2mm </content>
+				</answer>
+				<answer probability="30.00">
+					<content culture="cs-CZ" type="text">0,1mm </content>
+				</answer>
+			</answers>
+			<contexts>
+				<greater threshold="35" literal="zkusen"/>
+				<less threshold="60" literal="rych"/>
+			</contexts>	
+		</node>
+
+		<node literal="mecha" probability="50.00" type="query">
+			<comment>
+				<content culture="cs-CZ" type="text">
+					Jak velká je požadovaná mechanická odolnost modelu?
+					<br/>
+				</content>
+			</comment>
+			<answers>
+				<answer probability="80.00">
+					<content culture="cs-CZ" type="text">Vysoce mechanicky namáhané  </content>
+				</answer>
+				<answer probability="60.00">
+					<content culture="cs-CZ" type="text">Lehce namáhané  </content>
+				</answer>
+				<answer probability="50.00">
+					<content culture="cs-CZ" type="text">Nevím</content>
+				</answer>
+				<answer probability="45.00">
+					<content culture="cs-CZ" type="text">Pouze část namáhaná  </content>
+				</answer>
+				<answer probability="30.00">
+					<content culture="cs-CZ" type="text">Bez namáhaní (Model na poličku) </content>
+				</answer>
+			</answers>
+		</node>
+		
+		<node literal="teplota" probability="50.00" type="query">
+			<comment>
+				<content culture="cs-CZ" type="text">
+					Bude model vystaven větším teplotám?
+					<br/>
+				</content>
+			</comment>
+			<answers>
+				<answer probability="90.00">
+					<content culture="cs-CZ" type="text">Ano větším jak 80 celzia  </content>
+				</answer>
+				<answer probability="70.00">
+					<content culture="cs-CZ" type="text">Ano bude to na teplejším povrchu  </content>
+				</answer>
+				<answer probability="50.00">
+					<content culture="cs-CZ" type="text">Nevím</content>
+				</answer>
+				<answer probability="40.00">
+					<content culture="cs-CZ" type="text">Ne bude to jen na slunci </content>
+				</answer>
+				<answer probability="20.00">
+					<content culture="cs-CZ" type="text">Ne pouze pokojová teplota ve stínu  </content>
+				</answer>
+			</answers>
+		</node>
+	
+		<node literal="uprava" probability="50.00" type="query">
+			<comment>
+				<content culture="cs-CZ" type="text">
+					Chcete daný model dále upravovat?
+					<image>post.jpg</image>
+					<br/>
+				</content>
+			</comment>
+			<answers>
+				<answer probability="90.00">
+					<content culture="cs-CZ" type="text">Ano velmi  </content>
+				</answer>
+				<answer probability="60.00">
+					<content culture="cs-CZ" type="text">Ano trochu  </content>
+				</answer>
+				<answer probability="50.00">
+					<content culture="cs-CZ" type="text">Nevím</content>
+				</answer>
+				<answer probability="40.00">
+					<content culture="cs-CZ" type="text">Nejspíš ne </content>
+				</answer>
+				<answer probability="20.00">
+					<content culture="cs-CZ" type="text">Ne</content>
+				</answer>
+			</answers>
+		</node>
+		
+			
+		<node literal="baget" probability="35.00" type="query">
+			<comment>
+				<content culture="cs-CZ" type="text">
+					Kolik peněz jste skochopen za filament utratit?
+					<br/>
+				</content>
+			</comment>
+			<answers>
+				<answer probability="95.00">
+					<content culture="cs-CZ" type="text">Hodne  </content>
+				</answer>
+				<answer probability="75.00">
+					<content culture="cs-CZ" type="text">Celkem dost </content>
+				</answer>
+				<answer probability="50.00">
+					<content culture="cs-CZ" type="text">Nevím</content>
+				</answer>
+				<answer probability="35.00">
+					<content culture="cs-CZ" type="text">Celkem málo</content>
+				</answer>
+				<answer probability="20.00">
+					<content culture="cs-CZ" type="text">Co nejméně </content>
+				</answer>
+			</answers>
+		</node>
+		
+		<node literal="barva" probability="50.00" type="query">
+			<comment>
+				<content culture="cs-CZ" type="text">
+					Budete používat speciální barvy?
+					<image>color.jpg</image>
+					<br/>
+				</content>
+			</comment>
+			<answers>
+				<answer probability="80.00">
+					<content culture="cs-CZ" type="text">Ano potřebuju hodně barev a vzoru </content>
+				</answer>
+				<answer probability="65.00">
+					<content culture="cs-CZ" type="text">Ano potřebuju hodně barev </content>
+				</answer>
+				<answer probability="50.00">
+					<content culture="cs-CZ" type="text">Nevím</content>
+				</answer>
+				<answer probability="40.00">
+					<content culture="cs-CZ" type="text">Ne stačí mi základní barvy  </content>
+				</answer>
+				<answer probability="20.00">
+					<content culture="cs-CZ" type="text">Ne stačí mi černa </content>
+				</answer>
+			</answers>
+			<contexts>
+				<greater threshold="40" literal="baget"/>
+			</contexts>	
+		</node>
+
+		<node literal="konec" probability="50.00" type="query">
+			<comment>
+				<content culture="cs-CZ" type="text">
+					Požadujete ukončeni expertízy?
+					<br/>
+				</content>
+			</comment>
+			<answers>
+				<answer probability="90.00">
+					<content culture="cs-CZ" type="text">Ano </content>
+				</answer>
+				<answer probability="10.00">
+					<content culture="cs-CZ" type="text">Ne </content>
+				</answer>
+				<answer probability="50.00">
+					<content culture="cs-CZ" type="text">Nevím</content>
+				</answer>
+			</answers>
+		</node>
+
+		<node literal="cena" probability="50.00" type="query">
+			<comment>
+				<content culture="cs-CZ" type="text">
+					V jake cenove relaci se pohybuje vaše tiskárna?
+					<br/>
+				</content>
+			</comment>
+						<answers>
+				<answer probability="90.00">
+					<content culture="cs-CZ" type="text">+1500 Euro </content>
+				</answer>
+				<answer probability="65.00">
+					<content culture="cs-CZ" type="text">600 až 1500 Euro </content>
+				</answer>
+				<answer probability="50.00">
+					<content culture="cs-CZ" type="text">Nevím</content>
+				</answer>
+				<answer probability="40.00">
+					<content culture="cs-CZ" type="text">300 až 600 Euro</content>
+				</answer>
+				<answer probability="20.00">
+					<content culture="cs-CZ" type="text">do 300 Euro </content>
+				</answer>
+			</answers>
+			<contexts>
+				<less threshold="50" literal="konec"/>
+			</contexts>	
+		</node>
+		
+		<node literal="upgrade" probability="50.00" type="query">
+			<comment>
+				<content culture="cs-CZ" type="text">
+					Jak hodne jste si upgradnul tiskárnu?
+					<br/>
+				</content>
+			</comment>
+				<answers>
+				<answer probability="80.00">
+					<content culture="cs-CZ" type="text">Prakticky jsem ji předelal na uplne jinou tiskárnu </content>
+				</answer>
+				<answer probability="65.00">
+					<content culture="cs-CZ" type="text">Hrabal jsem se i v softveru i v hardveru </content>
+				</answer>
+				<answer probability="50.00">
+					<content culture="cs-CZ" type="text">Nevím</content>
+				</answer>
+				<answer probability="40.00">
+					<content culture="cs-CZ" type="text">Jen základní součástky</content>
+				</answer>
+				<answer probability="20.00">
+					<content culture="cs-CZ" type="text">Vubec </content>
+				</answer>
+			</answers>
+			<contexts>
+				<less threshold="50" literal="konec"/>
+			</contexts>	
+		</node>
+		
+		
+			
+		<node literal="PLA" probability="50.00" type="hypotesis">
+			<comment>
+				<content culture="cs-CZ" type="text">
+					Pouzite PLA
+					<br/>
+				</content>
+			</comment>
+			<relationships>
+				<relationship type="disjunction" alpha="55.00">
+					<negative literal="upgrade"/>
+				</relationship>
+				<relationship type="disjunction" alpha="65.00">
+					<negative literal="cena"/>
+				</relationship>
+				<relationship type="disjunction" alpha="40.00">
+					<negative literal="zkusen"/>
+				</relationship>
+				<relationship type="disjunction" alpha="10.00">
+					<negative literal="vyhr"/>
+				</relationship>
+				<relationship type="disjunction" alpha="80.00">
+					<positive literal="baget"/>
+				</relationship>
+				<relationship type="conjunction" alpha="65.00">
+					<positive literal="rych"/>
+				</relationship>
+				<relationship type="disjunction" alpha="70.00">
+					<negative literal="presnost"/>
+				</relationship>
+				<relationship type="conjunction" alpha="75.00">
+					<positive literal="mecha"/>
+				</relationship>
+				<relationship type="disjunction" alpha="75.00">
+					<negative literal="teplota"/>
+				</relationship>
+				<relationship type="disjunction" alpha="55.00">
+					<positive literal="uprava"/>
+				</relationship>
+				<relationship type="disjunction" alpha="90.00">
+					<positive literal="barva"/>
+				</relationship>
+			</relationships>
+		</node>	
+		
+		<node literal="PET" probability="50.00" type="hypotesis">
+			<comment>
+				<content culture="cs-CZ" type="text">
+					Pouzite PET-G
+					<br/>
+				</content>
+			</comment>
+			<relationships>
+				<relationship type="disjunction" alpha="65.00">
+					<positive literal="upgrade"/>
+				</relationship>
+				<relationship type="disjunction" alpha="60.00">
+					<positive literal="cena"/>
+				</relationship>
+				<relationship type="disjunction" alpha="60.00">
+					<positive literal="zkusen"/>
+				</relationship>
+				<relationship type="disjunction" alpha="65.00">
+					<positive literal="vyhr"/>
+				</relationship>
+				<relationship type="disjunction" alpha="80.00">
+					<positive literal="baget"/>
+				</relationship>
+				<relationship type="conjunction" alpha="60.00">
+					<positive literal="rych"/>
+				</relationship>
+				<relationship type="conjunction" alpha="55.00">
+					<negative literal="presnost"/>
+				</relationship>
+				<relationship type="conjunction" alpha="65.00">
+					<positive literal="mecha"/>
+				</relationship>
+				<relationship type="disjunction" alpha="70.00">
+					<positive literal="teplota"/>
+				</relationship>
+				<relationship type="disjunction" alpha="90.00">
+					<negative literal="uprava"/>
+				</relationship>
+				<relationship type="disjunction" alpha="85.00">
+					<negative literal="barva"/>
+				</relationship>
+			</relationships>
+		</node>	
+	
+		<node literal="ABS" probability="50.00" type="hypotesis">
+			<comment>
+				<content culture="cs-CZ" type="text">
+					Pouzite ABS
+					<br/>
+				</content>
+			</comment>
+			<relationships>
+				<relationship type="disjunction" alpha="70.00">
+					<positive literal="upgrade"/>
+				</relationship>
+				<relationship type="disjunction" alpha="75.00">
+					<positive literal="cena"/>
+				</relationship>
+				<relationship type="disjunction" alpha="75.00">
+					<positive literal="zkusen"/>
+				</relationship>
+				<relationship type="disjunction" alpha="80.00">
+					<positive literal="vyhr"/>
+				</relationship>
+				<relationship type="disjunction" alpha="55.00">
+					<negative literal="baget"/>
+				</relationship>
+				<relationship type="conjunction" alpha="65.00">
+					<negative literal="rych"/>
+				</relationship>
+				<relationship type="conjunction" alpha="55.00">
+					<positive literal="presnost"/>
+				</relationship>
+				<relationship type="conjunction" alpha="55.00">
+					<negative literal="mecha"/>
+				</relationship>
+				<relationship type="disjunction" alpha="80.00">
+					<positive literal="teplota"/>
+				</relationship>
+				<relationship type="disjunction" alpha="75.00">
+					<positive literal="uprava"/>
+				</relationship>
+				<relationship type="disjunction" alpha="65.00">
+					<positive literal="barva"/>
+				</relationship>
+			</relationships>
+		</node>	
+	</body>
+</knowledge_base>
+
